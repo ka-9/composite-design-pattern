@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'SprintQ/main.css' %}">
+    <script src="https://kit.fontawesome.com/bfb536358e.js" crossorigin="anonymous"></script>
+    <title>SprintQuest</title>
+</head>
+<body>
+    <header>
+        <section class="project-info flex-col">
+            <input type="text" placeholder="Untitled SprintQuest" id="title" name="title" autocomplete="off">
+            <div class="sprint-questers">
+                <input type="text" placeholder="Scrum Master" id="pgm-name" name="scrum-master" autocomplete="off">
+                <input type="text" placeholder="Product Owner" id="pgm-name" name="product-owner" autocomplete="off">
+            </div>
+        </section>
+    </header>
+
+    <div class="flex-col no-task-img invisible"><img src="{% static 'SprintQ/sad-duckling.png' %}" alt="sad-duckling"><p>You don't have any task planned for this sprint. #sad_duck</p></div>
+
+    <section class="main-wd">
+
+        <section class="left flex-col">
+            <section class="navbar flex-col">
+                <button class="new-task"><i class="fa-solid fa-diagram-next"></i></button>
+                <button class="save"><i class="fa-solid fa-floppy-disk"></i></button>
+                <button class="erase"><i class="fa-solid fa-eraser"></i></button>
+                <button class="delete" onclick="confirmDelete()"><i class="fa-solid fa-trash-can"></i></button>
+            </section>
+
+            <section class="legend flex-col">
+                <h3>Quest Legend</h3>
+                <ul class="labels flex-col">
+
+                    <li class="group">
+                        <div class="purple"></div>
+                        <p>SprintQuest</p>
+                    </li>
+
+                    <li class="group">
+                        <div class="red"></div>
+                        <p>Epics</p>
+                    </li>
+
+                    <li class="group">
+                        <div class="green"></div>
+                        <p>User Stories</p>
+                    </li>
+
+                    <li class="group">
+                        <div class="yellow"></div>
+                        <p>Subtasks</p>
+                    </li>
+
+                    <li class="group">
+                        <div class="blue"></div>
+                        <p>Optional tasks</p>
+                    </li>
+
+                </ul>
+            </section>
+        </section>
+
+        <section class="middle">
+
+            <div class="task-module project-sprint">Sprint Quest #</div>
+            <div class="container flex-col">
+
+                <!-- Module: Row of tasks (Path) -->
+                <div class="path-module">
+                    <ul class="package epic">
+                        <li class="task-module">Epic 1</li>
+                    </ul>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                    <ul class="package user-story">
+                        <li class="task-module">User Story 1.1</li>
+                    </ul>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                    <ul class="package subtask">
+                        <li class="task-module">Subtask 1.1</li>
+                    </ul>
+                    <div><i class="fa-solid fa-arrow-right"></i></div>
+                    <ul class="package optional">
+                        <li class="task-module">Optional Task 1.1</li>
+                    </ul>
+                </div>              
+            </div>
+        </section>
+
+        <section class="right flex-col">
+            <section class="task-info">
+                <h2>Quest Info</h2>
+                <form action="" class="task-properties flex-col">
+                    <fieldset>
+                        <label for="textarea">Recipients
+                            <textarea type="textarea" class="recipients" name="recipients" id="recipients" required></textarea>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label for="start-date">Start Date
+                            <input type="date" class="start-date" name="start-date" id="start-date" required>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label for="due-date">Due Date
+                            <input type="date" class="due-date" name="due-date" id="due-date" required>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label for="parent-task">Parent Task
+                            <select name="parent-task" class="parent-task" id="parent-task">
+                                <option value="task-1.1" selected>Task 1.1</option>
+                                <option value="task-1.2">Task 1.2</option>
+                            </select>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label for="budget">Budget $
+                            <input type="number" class="budget" name="budget" id="budget" min="0.00" max="10000.00" step="0.01">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label for="linked-documents">Linked Documents
+                            <input type="file" class="linked-documents" name="linked-documents" id="linked-documents" min="0" max="5">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label for="add-notes">Additional Notes
+                            <textarea type="textarea" class="add-notes" name="add-notes" id="add-notes"></textarea>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <input type="submit" class="submit" value="Save"/>
+                    </fieldset>
+                </form>
+            </section>
+        </section>
+
+    </section>
+
+    <script src="{% static 'SprintQ/index.js' %}" type="module"></script>
+</body>
+</html>
