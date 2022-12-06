@@ -449,6 +449,7 @@ ul.labels
     z-index: -1;
     margin: 0 auto;
     text-align: center;
+    align-items: center;
     color:rgb(172, 172, 172);
     font-size: 2rem;
 }
