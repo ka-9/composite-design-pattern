@@ -556,6 +556,10 @@ ul.labels
 
 @media screen and (max-width: 940px) 
 {
+    :root{
+        font-size: 7px;
+    }
+
     .main-wd
     {
         grid-template-columns: 1fr;
