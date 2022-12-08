@@ -1,15 +1,15 @@
-## composite-design-pattern
+# composite-design-pattern
 
 Access our project now via https://sprintquest.vercel.app/
 Note: The following URL can also be found on this github repository, under the 'About' section.
 
-# Description
+## Description
 For this group project, we created a planner to ease up the creation of more professional schemes of work.
 SprintQuest provides an easy-to-use user interface through which all important project-related data is collected and used for creating a comprehensible plan.
 
 The backend of this project was implemented following the composite design pattern.
 
-# User Interface
+## User Interface
 The UI comprises three main components, a left compartment for main commands, a middle one for manipulating and visualizing the Tasks hierarchy (creation/deletion...) and a right compartment for editing individual Tasks.
 
 On the left, we see four buttons:
@@ -20,7 +20,7 @@ On the left, we see four buttons:
 
 Equipped with a responsive layout, the project's title lives in a magenta box next to the four main classes of Tasks: Epics (Milestones) each having a row of its own, User Stories (Main Tasks) in red, Sub tasks in yellow and Optional Tasks in blue; each of which can be created in a certain row by clicking on its corresponding box.
 
-# Using the Software
+## Using the Software
 To update a task information, simply double-click on the desired task and input the relevant information, then click 'save' to update the task's information. The information will automatically be updated in the corresponding object.
 
 In fact, a pannel shows up on the right after creating/selecting a certain task, and one can edit all the different aspects of it, some of the listed variables are its duration, name, costs, description etc...
@@ -28,10 +28,10 @@ The technologies used for the _current implementation_ of the project are:
     Frontend: 	JavaScript, HTML, CSS
 	Backend:	JavaScript
 	
-# Limitations
+## Limitations
 At this level, its usage is limited to the visualization and prototyping of the project itself, but the eventual goal is to export the data to more professional formats (Gantt charts, Burndown charts) used frequently by project managers and push the potential of the website to its maximum.
 
-# Future Project Expansion
+## Future Project Expansion
 In the future, this project's features will include: 
 Calculating the budget for high level tasks and epics based on subtasks budgets;    
 Pinning individual tasks and marking them as "important", which will be reflected in the Gantt Charts;  
